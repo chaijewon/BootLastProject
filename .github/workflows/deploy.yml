@@ -46,7 +46,6 @@ jobs:
      - name: Run command 
        run: |
          ssh -i ~/.ssh/id_ed25519 ubuntu@15.165.203.225 << 'EOF'
-           pkill -f 'java -jar' || true 
            cd ~/app &&
            set -a &&
            source .env &&
