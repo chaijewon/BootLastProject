@@ -14,10 +14,10 @@ jobs:
     #  name = stage = step
     steps:
      # 어떤 소스를 가지고 올지 => src / build.grade gradlew Dockerfile
-     #코드 체크 (Repository)
+     # 코드 체크 (Repository)
      - name: Checkout:repository
        uses: actions/checkout@v4
-     #JDK 설정 => SpringBoot프로젝트를 build => JDK 설정 
+     # JDK 설정 => SpringBoot프로젝트를 build => JDK 설정 
      - name: SetUp JDK 21
        uses: actions/setup-java@v4
        with:
