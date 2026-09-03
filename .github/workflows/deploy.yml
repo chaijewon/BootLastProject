@@ -27,17 +27,19 @@ jobs:
      # DB관련 => .env 
      - name: 환경설정
        run: |
-          ssh -o StrictHostKeyChecking=no ubuntu@3.35.11.75 << EOF
-          # 기존의 파일 삭제
-          mkdir -p ~/app
-          cd ~/app
-          rm -f .env
-          # 새로운 .env 생성 
-          touch .env
-          echo "DB_URL=${{secrets.DB_URL}}" >> .env
-          echo "DB_USERNAME=${{secrets.DB_USERNAME}}" >> .env
-          echo "DB_PASSWORD=${{secrets.DB_PASSWORD}}" >> .env
-          chomd 600 .env
+          ssh ubuntu@3.35.11.75 << EOF
+           # 기존의 파일 삭제
+           mkdir -p ~/app
+           cd ~/app
+           rm -f .env
+           # 새로운 .env 생성 
+           touch .env
+           echo "DB_URL=${{secrets.DB_URL}}" >> .env
+           echo "DB_USERNAME=${{secrets.DB_USERNAME}}" >> .env
+           echo "DB_PASSWORD=${{secrets.DB_PASSWORD}}" >> .env
+           chomd 600 .env
+          EOF
+          
      # Gradlew 권한 부여 
      - name: Set gradlew permission
        run: |
