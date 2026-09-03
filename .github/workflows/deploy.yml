@@ -77,7 +77,7 @@ jobs:
            echo "DB_URL=${{secrets.DB_URL}}" >> .env
            echo "DB_USERNAME=${{secrets.DB_USERNAME}}" >> .env
            echo "DB_PASSWORD=${{secrets.DB_PASSWORD}}" >> .env
-           chomd 600 .env
+           chmod 600 .env
           EOF
           
      # Deploy on service DockerHub Image using
